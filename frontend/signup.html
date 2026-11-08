@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Create a Royal Cuts customer account." />
+    <title>Create an Account — Royal Cuts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div data-site-header></div>
+    <main class="auth-page">
+      <section class="auth-visual auth-visual-signup">
+        <p class="eyebrow">YOUR ROYAL CUTS ACCOUNT</p>
+        <h1>Good grooming<br /><em>starts here.</em></h1>
+        <p>
+          Make your next visit easier and keep your appointments in one place.
+        </p>
+      </section>
+      <section class="auth-panel">
+        <div class="form-card auth-card">
+          <p class="eyebrow">JOIN THE STUDIO</p>
+          <h2>Create your<br /><em>account.</em></h2>
+          <form id="signup-form" class="form-grid">
+            <label class="field field-wide"
+              >Full name<input
+                name="name"
+                required
+                minlength="2"
+                maxlength="100"
+                autocomplete="name" /></label
+            ><label class="field field-wide"
+              >Phone number<input
+                name="phone"
+                type="tel"
+                required
+                minlength="7"
+                maxlength="30"
+                autocomplete="tel" /></label
+            ><label class="field field-wide"
+              >Email address<input
+                name="email"
+                type="email"
+                required
+                maxlength="254"
+                autocomplete="email" /></label
+            ><label class="field field-wide"
+              >Password<input
+                name="password"
+                type="password"
+                required
+                minlength="10"
+                maxlength="128"
+                autocomplete="new-password"
+              /><small>Use at least 10 characters.</small></label
+            >
+            <p
+              id="auth-message"
+              class="form-message field-wide"
+              role="status"
+            ></p>
+            <button class="button button-gold field-wide" type="submit">
+              Create account <span>↗</span>
+            </button>
+          </form>
+          <p class="auth-foot">
+            Already have an account? <a href="/login.html">Sign in</a>
+          </p>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

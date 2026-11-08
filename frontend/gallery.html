@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore haircut, beard, facial and studio photography from Royal Cuts."
+    />
+    <title>Gallery — Royal Cuts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div data-site-header></div>
+    <main>
+      <section class="page-hero page-hero-gallery">
+        <div class="wrap">
+          <p class="eyebrow">INSIDE ROYAL CUTS</p>
+          <h1>Craft you can<br /><em>see.</em></h1>
+          <p>
+            A glimpse of the studio, the rituals and the details that make a
+            difference.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap">
+          <div class="gallery-controls" id="gallery-filters">
+            <button class="filter-button active" data-category="All">All</button
+            ><button class="filter-button" data-category="Haircut">
+              Haircut</button
+            ><button class="filter-button" data-category="Beard">Beard</button
+            ><button class="filter-button" data-category="Facial">Facial</button
+            ><button class="filter-button" data-category="Studio">
+              Studio
+            </button>
+          </div>
+          <div id="gallery-grid" class="gallery-grid">
+            <p class="muted">Loading the gallery…</p>
+          </div>
+        </div>
+      </section>
+      <div
+        class="lightbox"
+        id="lightbox"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-label="Gallery image"
+      >
+        <button class="lightbox-close" type="button" aria-label="Close image">
+          ×</button
+        ><img src="" alt="" />
+        <p></p>
+      </div>
+    </main>
+    <div data-site-footer></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/gallery.js"></script>
+  </body>
+</html>

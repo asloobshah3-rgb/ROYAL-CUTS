@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="View your Royal Cuts profile and appointments."
+    />
+    <title>Your Account — Royal Cuts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div data-site-header></div>
+    <main>
+      <section class="page-hero page-hero-booking">
+        <div class="wrap">
+          <p class="eyebrow">YOUR ROYAL CUTS ACCOUNT</p>
+          <h1>Your visits,<br /><em>all in one place.</em></h1>
+          <p id="account-greeting">Loading your account…</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap account-content">
+          <div class="account-heading">
+            <div>
+              <p class="eyebrow">YOUR APPOINTMENTS</p>
+              <h2>Time well <em>spent.</em></h2>
+            </div>
+            <div class="button-row">
+              <a class="button button-outline" href="/booking.html"
+                >Book another visit</a
+              >
+              <button
+                class="button button-quiet"
+                id="account-logout"
+                type="button"
+              >
+                Sign out
+              </button>
+            </div>
+          </div>
+          <p id="account-message" class="form-message" role="status"></p>
+          <div id="account-appointments" class="account-appointments"></div>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/account.js"></script>
+  </body>
+</html>

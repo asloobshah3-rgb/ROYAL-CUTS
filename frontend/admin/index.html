@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Studio Dashboard — Royal Cuts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
+  </head>
+  <body class="admin-body">
+    <header class="admin-topbar">
+      <a class="brand" href="/"
+        ><span class="brand-mark">RC</span
+        ><span class="brand-name"
+          >ROYAL CUTS<small>STUDIO ADMIN</small></span
+        ></a
+      >
+      <div class="admin-user">
+        <span id="admin-name">Loading…</span
+        ><a href="/" class="text-link">View site</a
+        ><button id="admin-logout" class="button button-quiet">Sign out</button>
+      </div>
+    </header>
+    <main class="admin-shell">
+      <aside class="admin-sidebar">
+        <p class="eyebrow">WORKSPACE</p>
+        <a href="#overview" class="admin-nav active">Overview</a
+        ><a href="#appointments" class="admin-nav">Appointments</a
+        ><a href="#services" class="admin-nav">Services</a
+        ><a href="#gallery" class="admin-nav">Gallery</a
+        ><a href="#settings" class="admin-nav">Studio settings</a
+        ><a href="#messages" class="admin-nav">Contact messages</a
+        ><a href="#testimonials" class="admin-nav">Guest stories</a>
+      </aside>
+      <div class="admin-content">
+        <section id="overview" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">YOUR STUDIO AT A GLANCE</p>
+              <h1>Dashboard</h1>
+            </div>
+            <button id="refresh-dashboard" class="button button-outline">
+              Refresh data
+            </button>
+          </div>
+          <div id="overview-cards" class="stat-grid"></div>
+          <p id="admin-global-message" class="form-message" role="status"></p>
+        </section>
+        <section id="appointments" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">SCHEDULE</p>
+              <h2>Appointments</h2>
+            </div>
+          </div>
+          <div class="admin-filters">
+            <input
+              id="booking-search"
+              type="search"
+              placeholder="Search name, email or booking ID"
+            /><input id="booking-filter-date" type="date" /><select
+              id="booking-filter-service"
+            >
+              <option value="">All services</option></select
+            ><select id="booking-filter-status">
+              <option value="">All statuses</option>
+              <option>Pending</option>
+              <option>Confirmed</option>
+              <option>Completed</option>
+              <option>Cancelled</option></select
+            ><button id="apply-filters" class="button button-outline">
+              Filter
+            </button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Booking</th>
+                  <th>Guest</th>
+                  <th>Service</th>
+                  <th>Date &amp; time</th>
+                  <th>Status</th>
+                  <th>Update</th>
+                </tr>
+              </thead>
+              <tbody id="appointment-rows">
+                <tr>
+                  <td colspan="6">Loading appointments…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section id="services" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">THE MENU</p>
+              <h2>Manage services</h2>
+            </div>
+          </div>
+          <form id="service-form" class="admin-form-grid">
+            <input type="hidden" name="id" /><label
+              >Name<input name="name" required maxlength="100" /></label
+            ><label
+              >Category<input
+                name="category"
+                required
+                maxlength="60"
+                placeholder="Haircut & Styling" /></label
+            ><label
+              >Price<input
+                name="price"
+                type="number"
+                min="0"
+                step="0.01"
+                required /></label
+            ><label
+              >Duration (minutes)<input
+                name="duration"
+                type="number"
+                min="15"
+                max="360"
+                step="5"
+                required /></label
+            ><label class="wide"
+              >Image URL<input
+                name="image"
+                type="url"
+                required
+                maxlength="1000" /></label
+            ><label class="wide"
+              >Description<textarea
+                name="description"
+                required
+                maxlength="1000"
+                rows="3"
+              ></textarea>
+            </label>
+            <div class="wide admin-form-actions">
+              <button class="button button-gold" type="submit">
+                Save service</button
+              ><button
+                class="button button-quiet"
+                id="service-reset"
+                type="button"
+              >
+                Clear form
+              </button>
+            </div>
+          </form>
+          <div id="service-list" class="admin-item-list"></div>
+        </section>
+        <section id="gallery" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">THE STUDIO IN PICTURES</p>
+              <h2>Manage gallery</h2>
+            </div>
+          </div>
+          <form id="gallery-form" class="admin-form-grid">
+            <label>Title<input name="title" required maxlength="100" /></label
+            ><label
+              >Category<select name="category" required>
+                <option>Haircut</option>
+                <option>Beard</option>
+                <option>Facial</option>
+                <option>Studio</option>
+              </select></label
+            ><label class="wide"
+              >Image URL<input
+                name="image"
+                type="url"
+                required
+                maxlength="1000" /></label
+            ><label class="wide"
+              >Image description<input name="alt" required maxlength="200"
+            /></label>
+            <div class="wide">
+              <button class="button button-gold" type="submit">
+                Add image
+              </button>
+            </div>
+          </form>
+          <div id="gallery-list" class="admin-item-list"></div>
+        </section>
+        <section id="settings" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">HOW WE WELCOME YOU</p>
+              <h2>Studio settings</h2>
+            </div>
+          </div>
+          <form id="settings-form" class="admin-form-grid">
+            <label>Opens<input name="openTime" type="time" required /></label
+            ><label>Closes<input name="closeTime" type="time" required /></label
+            ><label
+              >Appointment interval (minutes)<input
+                name="slotIntervalMinutes"
+                type="number"
+                min="5"
+                max="120"
+                step="5"
+                required
+            /></label>
+            <label
+              >Studio time zone<input
+                name="timeZone"
+                required
+                maxlength="100"
+                placeholder="America/New_York" /><small
+                >Use an IANA zone such as Europe/London.</small
+              ></label
+            >
+            <fieldset class="wide">
+              <legend>Closed weekdays</legend>
+              <div class="weekday-options">
+                <label
+                  ><input type="checkbox" name="closedDays" value="0" />
+                  Sunday</label
+                ><label
+                  ><input type="checkbox" name="closedDays" value="1" />
+                  Monday</label
+                ><label
+                  ><input type="checkbox" name="closedDays" value="2" />
+                  Tuesday</label
+                ><label
+                  ><input type="checkbox" name="closedDays" value="3" />
+                  Wednesday</label
+                ><label
+                  ><input type="checkbox" name="closedDays" value="4" />
+                  Thursday</label
+                ><label
+                  ><input type="checkbox" name="closedDays" value="5" />
+                  Friday</label
+                ><label
+                  ><input type="checkbox" name="closedDays" value="6" />
+                  Saturday</label
+                >
+              </div>
+            </fieldset>
+            <label>Phone<input name="phone" maxlength="500" /></label
+            ><label
+              >WhatsApp number (international format)<input
+                name="whatsapp"
+                maxlength="500" /></label
+            ><label
+              >Email<input name="email" type="email" maxlength="500" /></label
+            ><label
+              >Instagram URL<input
+                name="instagram"
+                type="url"
+                maxlength="500" /></label
+            ><label
+              >Facebook URL<input
+                name="facebook"
+                type="url"
+                maxlength="500" /></label
+            ><label class="wide"
+              >Studio address<input name="address" maxlength="300" /></label
+            ><label class="wide"
+              >Google Maps embed URL<input
+                name="mapEmbedUrl"
+                type="url"
+                maxlength="500"
+            /></label>
+            <div class="wide">
+              <button class="button button-gold" type="submit">
+                Save studio settings
+              </button>
+            </div>
+          </form>
+        </section>
+        <section id="messages" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">GUEST CONNECTION</p>
+              <h2>Contact messages</h2>
+            </div>
+          </div>
+          <div id="contact-messages" class="admin-item-list"></div>
+        </section>
+        <section id="testimonials" class="admin-section">
+          <div class="admin-heading">
+            <div>
+              <p class="eyebrow">GUEST STORIES</p>
+              <h2>Manage testimonials</h2>
+            </div>
+          </div>
+          <form id="testimonial-form" class="admin-form-grid">
+            <label>Guest name<input name="customerName" required maxlength="100" /></label>
+            <label>Service<input name="service" required maxlength="100" /></label>
+            <label class="wide"
+              >Guest testimonial<textarea
+                name="quote"
+                required
+                minlength="10"
+                maxlength="700"
+                rows="3"
+              ></textarea>
+            </label>
+            <div class="wide">
+              <button class="button button-gold" type="submit">Publish testimonial</button>
+            </div>
+          </form>
+          <div id="testimonial-list" class="admin-item-list"></div>
+        </section>
+      </div>
+    </main>
+    <script src="/js/api.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

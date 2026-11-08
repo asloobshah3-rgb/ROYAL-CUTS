@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Contact Royal Cuts Luxury Hair & Grooming Studio."
+    />
+    <title>Contact — Royal Cuts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div data-site-header></div>
+    <main>
+      <section class="page-hero page-hero-contact">
+        <div class="wrap">
+          <p class="eyebrow">WE’RE HERE FOR YOU</p>
+          <h1>Let’s talk<br /><em>grooming.</em></h1>
+          <p>
+            Questions, a special request or just want a little guidance? We’d
+            love to hear from you.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap contact-layout">
+          <div class="contact-details">
+            <p class="eyebrow">VISIT THE STUDIO</p>
+            <h2>Come on <em>in.</em></h2>
+            <div class="contact-line">
+              <span>PHONE</span
+              ><span id="contact-phone"
+                >Studio phone is not set. Please use the message form.</span
+              >
+            </div>
+            <div class="contact-line">
+              <span>WHATSAPP</span
+              ><span id="contact-whatsapp"
+                >WhatsApp is not set. Please use the message form.</span
+              >
+            </div>
+            <div class="contact-line">
+              <span>EMAIL</span
+              ><span id="contact-email"
+                >Studio email is not set. Please use the message form.</span
+              >
+            </div>
+            <div class="contact-line">
+              <span>ADDRESS</span>
+              <p id="contact-address">Studio address is not set.</p>
+            </div>
+            <div class="contact-line">
+              <span>HOURS</span>
+              <p id="contact-hours">Hours are set by the studio.</p>
+            </div>
+            <div id="contact-socials" class="social-links"></div>
+          </div>
+          <div class="form-card contact-form-card">
+            <p class="eyebrow">SEND A NOTE</p>
+            <h2>We’re listening.</h2>
+            <form id="contact-form" class="form-grid">
+              <label class="field field-wide"
+                >Your name<input
+                  name="name"
+                  required
+                  minlength="2"
+                  maxlength="100"
+                  autocomplete="name" /></label
+              ><label class="field field-wide"
+                >Email address<input
+                  name="email"
+                  type="email"
+                  required
+                  maxlength="254"
+                  autocomplete="email" /></label
+              ><label class="field field-wide"
+                >Message<textarea
+                  name="message"
+                  rows="5"
+                  required
+                  minlength="10"
+                  maxlength="2000"
+                ></textarea>
+              </label>
+              <p
+                id="contact-message"
+                class="form-message field-wide"
+                role="status"
+              ></p>
+              <button class="button button-gold field-wide" type="submit">
+                Send message <span>↗</span>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="wrap map-wrap" id="map-wrap" hidden>
+          <iframe
+            id="studio-map"
+            title="Royal Cuts location"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/contact.js"></script>
+  </body>
+</html>

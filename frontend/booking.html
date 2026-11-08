@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Book your Royal Cuts grooming appointment online."
+    />
+    <title>Book an Appointment — Royal Cuts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/site.css" />
+  </head>
+  <body>
+    <div data-site-header></div>
+    <main>
+      <section class="page-hero page-hero-booking">
+        <div class="wrap">
+          <p class="eyebrow">RESERVE YOUR CHAIR</p>
+          <h1>Your time.<br /><em>Your ritual.</em></h1>
+          <p>
+            Choose your service and a time that works. We’ll take it from here.
+          </p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap booking-layout">
+          <div class="booking-main">
+            <div class="form-card">
+              <div class="form-heading">
+                <p class="eyebrow">BOOK AN APPOINTMENT</p>
+                <h2>Let’s get you <em>booked.</em></h2>
+                <p class="muted">All fields marked * are required.</p>
+              </div>
+              <form id="booking-form" class="form-grid">
+                <label class="field field-wide"
+                  >Full name *<input
+                    name="customerName"
+                    autocomplete="name"
+                    required
+                    minlength="2"
+                    maxlength="100"
+                /></label>
+                <label class="field"
+                  >Phone number *<input
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    required
+                    minlength="7"
+                    maxlength="30"
+                /></label>
+                <label class="field"
+                  >Email address *<input
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    maxlength="254"
+                /></label>
+                <label class="field field-wide"
+                  >Choose a service *<select
+                    name="serviceId"
+                    id="booking-service"
+                    required
+                  >
+                    <option value="">Loading services…</option>
+                  </select></label
+                >
+                <label class="field"
+                  >Appointment date *<input
+                    name="date"
+                    id="booking-date"
+                    type="date"
+                    required
+                /></label>
+                <label class="field"
+                  >Available time *<select
+                    name="timeSlot"
+                    id="booking-time"
+                    required
+                    disabled
+                  >
+                    <option value="">Choose a date and service first</option>
+                  </select></label
+                >
+                <label class="field field-wide"
+                  >Anything we should know?
+                  <textarea
+                    name="message"
+                    rows="4"
+                    maxlength="1000"
+                    placeholder="Share a style preference or note for your barber."
+                  ></textarea>
+                </label>
+                <p
+                  id="booking-message"
+                  class="form-message field-wide"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+                <button
+                  class="button button-gold field-wide"
+                  id="booking-submit"
+                  type="submit"
+                >
+                  Request appointment <span>↗</span>
+                </button>
+              </form>
+              <div
+                id="booking-confirmation"
+                class="confirmation-card"
+                hidden
+                aria-live="polite"
+              ></div>
+            </div>
+            <div class="form-card lookup-card">
+              <p class="eyebrow">ALREADY BOOKED?</p>
+              <h2>Find or cancel a <em>booking.</em></h2>
+              <form id="lookup-form" class="form-grid">
+                <label class="field"
+                  >Booking ID<input
+                    name="bookingId"
+                    required
+                    placeholder="RC-XXXXXXXXXX" /></label
+                ><label class="field"
+                  >Booking email<input name="email" type="email" required
+                /></label>
+                <p
+                  class="form-message field-wide"
+                  id="lookup-message"
+                  role="status"
+                ></p>
+                <div class="button-row field-wide">
+                  <button class="button button-outline" type="submit">
+                    Look up booking</button
+                  ><button
+                    class="button button-quiet"
+                    id="cancel-booking"
+                    type="button"
+                    hidden
+                  >
+                    Cancel appointment
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <aside class="booking-aside">
+            <div class="aside-card">
+              <p class="eyebrow">THE DETAILS</p>
+              <h3>Thoughtful from<br />start to finish.</h3>
+              <p>
+                Choose the service that suits you. Our team will confirm your
+                booking and be ready to welcome you.
+              </p>
+              <div class="aside-separator"></div>
+              <p>
+                <strong>Cancellation policy</strong><br />Appointments may be
+                cancelled up to 24 hours before the scheduled start time.
+              </p>
+              <a class="text-link" href="/services.html"
+                >Explore services <span>↗</span></a
+              >
+            </div>
+            <div class="aside-image"></div>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <div data-site-footer></div>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/booking.js"></script>
+  </body>
+</html>
